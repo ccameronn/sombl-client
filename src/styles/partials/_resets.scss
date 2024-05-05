@@ -1,0 +1,13 @@
+@use "./variables" as *;
+@use "./fonts" as *;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+  color: $Instock-Black;
+}

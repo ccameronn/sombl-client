@@ -1,0 +1,9 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.navbar {
+  width: 100%;
+  height: 200px;
+  background-color: black;
+  position: absolute;
+}
