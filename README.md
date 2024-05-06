@@ -60,47 +60,97 @@ When you take the leap to start a band, choir, musical theatre show, a cappella 
 
 ### Mockups
 
+#### Color Scheme
+
+[Color scheme on Canva](https://www.canva.com/design/DAGCMzqlDi4/WJCvMetx5xRqJ-o_ARpZdw/edit)
+
 #### Home Page
 
 ![home-mockup](./src/assets/mockup/home-mockup.png "Home Mockup")
 
 ### Endpoints
 
-**GET /rehearsals/:group_id**
+**GET /events/:group_id/:month**
 
-- Get list of rehearsals
+- Get list of events for a given group in a given month
 
 Parameters:
 
-- longitude: User-provided location as a number
-- latitude: User-provided location as a number
+- group_id: User account's group_id (default 1 to begin with)
+- month: Selected month in state used (eg. 3)
 
 Response:
 
 ```
 [
     {
-        "rehearsal_id": 1,
-        "name": "Band Practice",
-        "time_scheduled": "19:00",
-        "date_scheduled": "30/07/2024",
-        "location": "Vauxhall Gardens Community Hall",
+        "gig": false;
+        "id": 1,
         "group_id": 4,
-        "created_at": "01/04/2024"
+        "title": "Band Practice",
+        "start_time": "2024-03-30 19:00:00",
+        "end_time": "2024-03-30 21:00:00",
+        "month": 3;
+        "street_name": "Vauxhall Gardens Community Hall",
+        "postcode": "SW8 1EE",
+        "organiser": "Cameron Browne",
+        "created_at": "2024-01-30 10:00:00",
+        "notes" : "Text..."
     },
     ...
 ]
 ```
 
-**POST /rehearsals/:group_id**
+**GET /events/:id**
 
-- User can add a rehearsal
+- Get individual event details (rehearsal/gig)
 
-**PUT /rehearsals/:group_id/:rehearsal_id**
+Parameters:
 
-- User edit a rehearsal
+- id: event_id provided by the frontend
 
-(same as above for gigs)
+Response:
+
+```
+    {
+        "gig": false;
+        "id": 1,
+        "group_id": 4,
+        "title": "Band Practice",
+        "start_time": "2024-03-30 19:00:00",
+        "end_time": "2024-03-30 21:00:00",
+        "month": 3;
+        "street_name": "Vauxhall Gardens Community Hall",
+        "postcode": "SW8 1EE",
+        "organiser": "Cameron Browne",
+        "created_at": "2024-01-30 10:00:00",
+        "notes" : "Text..."
+    }
+```
+
+**POST /events**
+
+- User can add a rehearsal/gig
+
+**PUT /events/:id**
+
+- User edit a rehearsal/gig
+
+**POST /groups**
+
+- Add group
+
+Parameters
+
+- name: Group name
+
+Response
+
+```
+{
+  group_id: "1"
+}
+```
 
 **POST /users/register**
 
@@ -109,7 +159,11 @@ Response:
 Parameters:
 
 - email: User's email
+- name: User's name
 - password: User's provided password
+- role: manager (default at first)
+- group_id: 1 (comes from group_id stored after creating group above)
+- created_at: creation timestamp
 
 Response:
 
@@ -138,11 +192,91 @@ Response:
 
 ### Auth
 
+- JWT auth
+  - Before adding auth, all API requests will be using a fake user with id 1
+  - Added after core features have first been implemented
+  - Store JWT in localStorage, remove when a user logs out
+
 ## Roadmap
+
+- Create client
+
+  - react project with routes and boilerplate pages
+
+- Create server
+
+  - express project with routing, with placeholder 200 responses
+
+- Create migrations
+
+- Create seeds with sample rehearsal data
+
+- Feature: Front-End - Create home page
+
+- Feature: List rehearsals and gigs for a given group
+
+  - Display list of rehearsals and gigs for a given group in a given month
+  - Create GET /events/:group_id/:month endpoint
+
+- Feature: View rehearsal
+
+  - Implement view rehearsal page
+  - Create GET /events/id endpoint
+
+- Feature: View gig
+
+  - Implement view gig page
+
+- Feature: Create rehearsal
+
+  - Implement create rehearsal page
+  - Create POST /events endpoint
+
+- Feature: Create gig
+
+  - Implement create gig page
+
+- Feature: Edit rehearsal page
+
+  - Implement edit rehearsal page
+  - Create PUT /events/id endpoint
+
+- Feature: Edit gig page
+
+  - Implement edit gig page
+
+- Feature: Create group then account
+
+  - Create login/register page on home route
+  - Create POST /groups endpoint (add logic so 2 groups cannot have the same name)
+  - Create POST /users/register endpoint
+  - Implement create group page + form
+  - Implement create account page + form
+
+- Feature: Login
+
+  - Create POST /users/login endpoint
+  - Implement login page + form
+  - Add logout button on home page
+
+- Feature: Implement JWT tokens
+
+  - Server: Update expected requests / responses on protected endpoints
+  - Client: Store JWT in local storage, include JWT on axios calls
+
+- Feature: Create a share url
+
+  - Create button to share rehearsal plan via url
+  - Create a route for "/shared" with a 'view only' mode
+
+- Bug fixes
+
+- DEMO DAY
 
 ## Nice-to-haves
 
+- Deploy client and server projects to production
 - Add ToDo List
-- Add AI rehearsal generator
+- Add AI rehearsal plan generator
 - Add a calandr view
 - Add file upload funtionailty
