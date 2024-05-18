@@ -1,8 +1,10 @@
-import { Link, NavLink } from "react-router-dom";
-import { React, useState, useEffect } from "react";
-import axios from "axios";
+// import { Link, NavLink } from "react-router-dom";
+// import { React, useState, useEffect } from "react";
+import React from "react";
 
-import { BACKEND_URL } from "../../constants/constants.js";
+// import axios from "axios";
+
+// import { BACKEND_URL } from "../../constants/constants.js";
 
 function Home() {
   return <section className="home"></section>;
