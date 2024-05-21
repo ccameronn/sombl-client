@@ -1,3 +1,8 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/resets" as *;
+
 .footer {
   width: 100%;
   display: flex;
@@ -6,9 +11,8 @@
   padding: 24px 0;
 
   &__text {
-    color: #5c667e;
-    font-size: 12px;
-    line-height: 18px;
+    color: $Sombl-Grey;
+    font-size: 1rem;
     font-weight: 400;
   }
 }

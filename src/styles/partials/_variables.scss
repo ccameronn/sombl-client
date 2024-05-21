@@ -2,13 +2,18 @@
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 
-// 2 CREATE COLOR VARIABLES
+// COLOR VARIABLES
+// 1 PRIMARY - ORANGES
+$Sombl-Orange-Dark: #ff7e33;
+$Sombl-Orange-Mid: #ffa570;
+$Sombl-Orange-Light: #ffd8c2;
 
-// 1 PRIMARY COLORS
-$Sombl: orange;
+// 2 SECONDARY - BLUES
+$Sombl-Purple-Dark: #5736fc;
+$Sombl-Purple-Mid: #8972fe;
+$Sombl-Purple-Light: #bcaffe;
 
-// 2 SECONDARY COLOR
-
-// 3 BACKGROUND COLORS
-
-// 4 SUPPORTING COLORS
+// 3 OTHER
+$Sombl-Black: #110308;
+$Sombl-White: #ffffff;
+$Sombl-Grey: #251818;

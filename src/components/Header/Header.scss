@@ -3,7 +3,71 @@
 
 .navbar {
   width: 100%;
-  height: 200px;
-  background-color: black;
-  position: absolute;
+  height: 100px;
+  background-color: $Sombl-Black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.logo-container {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sombl-logo {
+  max-width: 3rem;
+}
+
+.logo-title {
+  background-color: $Sombl-Black;
+  color: $Sombl-White;
+  margin-top: 0rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+
+.nav-list {
+  background-color: $Sombl-Black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.nav-link {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  color: $Sombl-Orange-Mid;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin: 0 1rem;
+  border: $Sombl-Black 1px solid;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    border: $Sombl-Orange-Dark 1px solid;
+    border-radius: 0.5rem;
+    color: $Sombl-White;
+    background-color: $Sombl-Black;
+    font-size: 1.4rem;
+  }
+  &:active {
+    padding: 0.6rem;
+    background-color: $Sombl-Orange-Mid;
+    border: $Sombl-Black 1px solid;
+  }
+}
+
+.navbar ul a.active {
+  border: $Sombl-Black 1px solid;
+  border-radius: 0.5rem;
+  color: $Sombl-Black;
+  background-color: $Sombl-Orange-Dark;
+  font-size: 1.2rem;
 }
