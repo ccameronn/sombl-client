@@ -15,18 +15,45 @@ main {
 
 .year-form {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   background-color: $Sombl-Orange-Mid;
 }
 
 .year-input {
-  background-color: $Sombl-Orange-Dark;
+  background-color: $Sombl-Black;
+  color: $Sombl-White;
   border: none;
   border-radius: 2rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  font-weight: 400;
   padding: 0.5rem 1rem;
   margin-top: 0.5rem;
+  text-align: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.increment-button {
+  border: $Sombl-Orange-Mid;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  margin: 0.3rem 1rem 0 1rem;
+  padding: 0 1rem;
+  color: $Sombl-Black;
+  background-color: $Sombl-Orange-Mid;
+  transition: 0.1s ease-out;
+  &:hover {
+    background-color: $Sombl-Orange-Light;
+  }
+  &:active {
+    background-color: $Sombl-Black;
+    color: $Sombl-White;
+    transform: scale(0.9);
+  }
 }
 
 .sub-nav {
@@ -41,7 +68,7 @@ main {
 .month {
   background-color: $Sombl-Orange-Mid;
   color: $Sombl-Black;
-  font-size: 1.5rem;
+  font-size: 2rem;
 
   margin: 0rem;
   border: $Sombl-Orange-Mid 1px solid;
@@ -55,7 +82,7 @@ main {
   &:active {
     background-color: $Sombl-Orange-Dark;
     color: $Sombl-White;
-    transform: scale(0.9);
+    transform: scale(0.7);
   }
 }
 

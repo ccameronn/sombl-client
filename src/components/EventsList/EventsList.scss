@@ -1,0 +1,285 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/resets" as *;
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes pulse {
+  0% {
+    color: $Sombl-Black;
+  }
+  50% {
+    color: $Sombl-Orange-Light;
+  }
+  100% {
+    color: $Sombl-Black;
+  }
+}
+
+.loading-text {
+  font-size: 5rem;
+  margin-top: 3rem;
+  animation: pulse 1s infinite ease-in-out;
+}
+
+.section {
+  padding: 2rem;
+}
+
+.events-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.events-title {
+  font-size: 5rem;
+  color: $Sombl-Black;
+}
+
+.add-rehearsal-button {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  color: $Sombl-White;
+  font-size: 1.8rem;
+  padding: 1rem;
+  margin: 0 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    color: $Sombl-Orange-Dark;
+    background-color: $Sombl-Black;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.cards-container {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.empty-message {
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.rehearsal-card {
+  background-color: $Sombl-Orange-Mid;
+  color: $Sombl-Black;
+  border-radius: 1rem;
+  margin: 0;
+  padding: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "a a"
+    "b d"
+    "c d";
+  box-shadow: 0 0 1.5rem rgb(17 3 8 / 0.2);
+
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.rehearsal-when {
+  grid-area: a;
+  background-color: $Sombl-Orange-Dark;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 0.5rem;
+  width: auto;
+  border-radius: 0.7rem;
+}
+
+.rehearsal-date {
+  background-color: $Sombl-Orange-Dark;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: $Sombl-White;
+}
+
+.rehearsal-time {
+  background-color: $Sombl-Orange-Dark;
+  color: $Sombl-White;
+  opacity: 0.85;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.rehearsal-title {
+  grid-area: b;
+  color: $Sombl-Black;
+  background-color: $Sombl-Orange-Mid;
+  font-weight: 400;
+  font-size: 4rem;
+  margin-top: 0.5rem;
+}
+
+.rehearsal-address {
+  grid-area: c;
+  background-color: $Sombl-Orange-Mid;
+  color: $Sombl-Grey;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.rehearsal-view-container {
+  grid-area: d;
+
+  background-color: $Sombl-Orange-Mid;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.rehearsal-view-link {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  color: $Sombl-White;
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 0 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    color: $Sombl-Orange-Dark;
+    background-color: $Sombl-Black;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.gig-card {
+  background-color: $Sombl-Purple-Mid;
+  color: $Sombl-Black;
+  border-radius: 1rem;
+  margin: 0;
+  padding: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "a a"
+    "b d"
+    "c d";
+  box-shadow: 0 0 1.5rem rgb(17 3 8 / 0.2);
+
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.gig-when {
+  grid-area: a;
+  background-color: $Sombl-Purple-Dark;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 0.5rem;
+  width: auto;
+  border-radius: 0.7rem;
+}
+
+.gig-date {
+  background-color: $Sombl-Purple-Dark;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: $Sombl-White;
+}
+
+.gig-time {
+  background-color: $Sombl-Purple-Dark;
+  color: $Sombl-Black;
+  font-size: 3rem;
+  font-weight: 700;
+  color: $Sombl-White;
+  opacity: 0.85;
+}
+
+.gig-title {
+  grid-area: b;
+  color: $Sombl-Black;
+  background-color: $Sombl-Purple-Mid;
+  font-weight: 400;
+  font-size: 4rem;
+  margin-top: 0.5rem;
+}
+
+.gig-address {
+  grid-area: c;
+  background-color: $Sombl-Purple-Mid;
+  color: $Sombl-Grey;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.gig-view-container {
+  grid-area: d;
+  background-color: $Sombl-Purple-Mid;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.gig-view-link {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  color: $Sombl-White;
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 0 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    color: $Sombl-Purple-Dark;
+    background-color: $Sombl-Black;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
