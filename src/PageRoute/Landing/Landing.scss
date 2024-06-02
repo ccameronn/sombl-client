@@ -1,3 +1,66 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/fonts" as *;
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: $Sombl-White;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes pulse {
+  0% {
+    color: $Sombl-Black;
+  }
+  50% {
+    color: $Sombl-Orange-Light;
+  }
+  100% {
+    color: $Sombl-Black;
+  }
+}
+
+.loading-text {
+  font-size: 5rem;
+  margin-top: 3rem;
+  animation: pulse 1s infinite ease-in-out;
+}
+
+.group-card-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.group-card {
+  border-radius: 1rem;
+  background-color: $Sombl-Orange-Mid;
+  padding: 1rem;
+}
+
+.group-name {
+  background-color: $Sombl-Orange-Mid;
+  font-size: 8rem;
+  color: $Sombl-Black;
+}
+
+.group-description {
+  background-color: $Sombl-Orange-Mid;
+  color: $Sombl-Grey;
+  font-size: 2rem;
+}

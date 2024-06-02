@@ -8,6 +8,7 @@ import { BACKEND_URL } from "../../constants/constants.js";
 
 const fetchEvents = async (activeMonth, activeYear) => {
   const groupId = sessionStorage.getItem("groupId");
+
   try {
     const response = await axios.get(
       `${BACKEND_URL}/events/${groupId}/${activeMonth}/${activeYear}`
@@ -89,7 +90,7 @@ function formatTime(dateString) {
 }
 
 function EventsList({ activeMonth, activeYear }) {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [events, setEvents] = useState([]);
 
   const navigate = useNavigate();
@@ -184,8 +185,8 @@ function EventsList({ activeMonth, activeYear }) {
                 <p className="gig-address">{item.street_address}</p>
 
                 <div className="gig-view-container">
-                  <Link className="gig-view-link" to={`gig/${item.id}`}>
-                    View Gig
+                  <Link className="gig-view-link" to={item.id}>
+                    View
                   </Link>
                 </div>
               </div>
@@ -206,11 +207,8 @@ function EventsList({ activeMonth, activeYear }) {
                 <p className="rehearsal-address">{item.street_address}</p>
 
                 <div className="rehearsal-view-container">
-                  <Link
-                    className="rehearsal-view-link"
-                    to={`rehearsals/${item.id}`}
-                  >
-                    View Rehearsal
+                  <Link to={item.id} className="rehearsal-view-link">
+                    View
                   </Link>
                 </div>
               </div>

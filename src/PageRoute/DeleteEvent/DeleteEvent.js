@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+// import { Link, useParams } from "react-router-dom";
+// import { useState, useEffect } from "react";
 import React from "react";
-import "./ViewRehearsal.scss";
+import "./DeleteEvent.scss";
 // import axios from "axios";
 
 import Header from "../../components/Header/Header";
@@ -9,14 +9,14 @@ import Footer from "../../components/Footer/Footer";
 
 // import { BACKEND_URL } from "../../constants/constants.js";
 
-function ViewRehearsal() {
+function DeleteRehearsal() {
   return (
     <div className="container">
       <Header />
-      <main></main>
+      <main>DELETE REH HERE</main>
       <Footer />
     </div>
   );
 }
 
-export default ViewRehearsal;
+export default DeleteRehearsal;

@@ -4,7 +4,7 @@ import React from "react";
 import "./Rehearsals.scss";
 // import axios from "axios";
 
-// import { BACKEND_URL } from "../../constants/constants.js";
+import { BACKEND_URL, GROUP_ID } from "../../constants/constants.js";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -29,9 +29,6 @@ const getYear = () => {
 function Home() {
   const [activeMonth, setActiveMonth] = useState(getMonth());
   const [activeYear, setActiveYear] = useState(getYear());
-
-  // SETTING GROUPID ON SESSION STORAGE
-  sessionStorage.setItem("groupId", "1");
 
   useEffect(() => {
     storeMonth(activeMonth);

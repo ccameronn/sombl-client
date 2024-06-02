@@ -1,0 +1,440 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/fonts" as *;
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: $Sombl-White;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes pulse {
+  0% {
+    color: $Sombl-Black;
+  }
+  50% {
+    color: $Sombl-Orange-Light;
+  }
+  100% {
+    color: $Sombl-Black;
+  }
+}
+
+.loading-text {
+  font-size: 5rem;
+  margin-top: 3rem;
+  animation: pulse 1s infinite ease-in-out;
+}
+
+.reh-details-container {
+  padding: 2rem;
+}
+
+.reh-details-card {
+  background-color: $Sombl-Orange-Mid;
+  color: $Sombl-Black;
+  border-radius: 1rem;
+  margin: 0;
+  padding: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "a . b"
+    "c c c"
+    "d d d"
+    "e e e"
+    "f f f"
+    "g . h"
+    "i i i";
+
+  box-shadow: 0 0 1.5rem rgb(17 3 8 / 0.2);
+
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.reh-details-when {
+  grid-area: c;
+  background-color: $Sombl-Orange-Dark;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 0.5rem;
+  width: auto;
+  border-radius: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.reh-details-date {
+  background-color: $Sombl-Orange-Dark;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: $Sombl-White;
+}
+
+.reh-details-time {
+  background-color: $Sombl-Orange-Dark;
+  color: $Sombl-White;
+  opacity: 0.85;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.reh-details-title {
+  grid-area: d;
+  color: $Sombl-Black;
+  background-color: $Sombl-Orange-Mid;
+  font-weight: 400;
+  font-size: 4rem;
+  margin-top: 0.5rem;
+}
+
+.reh-details-address {
+  grid-area: e;
+  background-color: $Sombl-Orange-Mid;
+  color: $Sombl-Grey;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.reh-details-postcode {
+  grid-area: f;
+  background-color: $Sombl-Orange-Mid;
+  color: $Sombl-Grey;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.reh-details-sub-title {
+  grid-area: g;
+  color: $Sombl-Black;
+  background-color: $Sombl-Orange-Mid;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.reh-details-organiser {
+  grid-area: h;
+  background-color: $Sombl-Orange-Mid;
+  color: $Sombl-Black;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.reh-details-notes {
+  grid-area: i;
+  background-color: $Sombl-White;
+  color: $Sombl-Black;
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding: 0.5rem;
+  border: 0.2rem solid $Sombl-Orange-Dark;
+  border-radius: 0.5rem;
+}
+
+.reh-details-edit-container {
+  grid-area: b;
+
+  background-color: $Sombl-Orange-Mid;
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reh-details-delete-link {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  color: $Sombl-White;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    color: $Sombl-Orange-Dark;
+    background-color: $Sombl-Black;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.reh-details-edit-link {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  color: $Sombl-White;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    color: $Sombl-Orange-Dark;
+    background-color: $Sombl-Black;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.reh-details-back-container {
+  grid-area: a;
+
+  background-color: $Sombl-Orange-Mid;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.reh-details-back-link {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  color: $Sombl-White;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    color: $Sombl-Orange-Dark;
+    background-color: $Sombl-Black;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+// GIG STYLING
+
+.gig-details-container {
+  padding: 2rem;
+}
+
+.gig-details-card {
+  background-color: $Sombl-Purple-Mid;
+  color: $Sombl-Black;
+  border-radius: 1rem;
+  margin: 0;
+  padding: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "a . b"
+    "c c c"
+    "d d d"
+    "e e e"
+    "f f f"
+    "g . h"
+    "i i i";
+
+  box-shadow: 0 0 1.5rem rgb(17 3 8 / 0.2);
+
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.gig-details-when {
+  grid-area: c;
+  background-color: $Sombl-Purple-Dark;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 0.5rem;
+  width: auto;
+  border-radius: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.gig-details-date {
+  background-color: $Sombl-Purple-Dark;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: $Sombl-White;
+}
+
+.gig-details-time {
+  background-color: $Sombl-Purple-Dark;
+  color: $Sombl-White;
+  opacity: 0.85;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.gig-details-title {
+  grid-area: d;
+  color: $Sombl-Black;
+  background-color: $Sombl-Purple-Mid;
+  font-weight: 400;
+  font-size: 4rem;
+  margin-top: 0.5rem;
+}
+
+.gig-details-address {
+  grid-area: e;
+  background-color: $Sombl-Purple-Mid;
+  color: $Sombl-Grey;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.gig-details-postcode {
+  grid-area: f;
+  background-color: $Sombl-Purple-Mid;
+  color: $Sombl-Grey;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.gig-details-sub-title {
+  grid-area: g;
+  color: $Sombl-Black;
+  background-color: $Sombl-Purple-Mid;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.gig-details-organiser {
+  grid-area: h;
+  background-color: $Sombl-Purple-Mid;
+  color: $Sombl-Black;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.gig-details-notes {
+  grid-area: i;
+  background-color: $Sombl-White;
+  color: $Sombl-Black;
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding: 0.5rem;
+  border: 0.2rem solid $Sombl-Purple-Dark;
+  border-radius: 0.5rem;
+}
+
+.gig-details-edit-container {
+  grid-area: b;
+
+  background-color: $Sombl-Purple-Mid;
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gig-details-delete-link {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  color: $Sombl-White;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    color: $Sombl-Purple-Dark;
+    background-color: $Sombl-Black;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.gig-details-edit-link {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  color: $Sombl-White;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    color: $Sombl-Purple-Dark;
+    background-color: $Sombl-Black;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.gig-details-back-container {
+  grid-area: a;
+
+  background-color: $Sombl-Purple-Mid;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.gig-details-back-link {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  color: $Sombl-White;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    color: $Sombl-Purple-Dark;
+    background-color: $Sombl-Black;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
