@@ -1,5 +1,5 @@
-const BACKEND_URL = "http://localhost:5050";
-// const BACKEND_URL = "https://api.sombl.xyz";
+// const BACKEND_URL = "http://localhost:5050";
+const BACKEND_URL = "https://api.sombl.xyz";
 
 const GROUP_ID = "1";
 
