@@ -12,3 +12,252 @@
 main {
   flex-grow: 1;
 }
+
+.add-reh__section {
+  background-color: $Sombl-Orange-Mid;
+  padding: 1rem;
+  margin: 2rem;
+  color: $Sombl-Black;
+  border-radius: 1rem;
+  box-shadow: 0 0 1.5rem rgb(17 3 8 / 0.2);
+
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.add-reh__header {
+  background-color: $Sombl-Orange-Mid;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-reh__back {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  color: $Sombl-White;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+  width: fit-content;
+
+  &:hover {
+    color: $Sombl-Orange-Dark;
+    background-color: $Sombl-Black;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.add-reh__title {
+  background-color: $Sombl-Orange-Mid;
+  font-size: 4rem;
+}
+
+.add-reh__form {
+  background-color: $Sombl-Orange-Mid;
+  display: grid;
+  grid-template-areas:
+    "a b b b"
+    "c d d d"
+    "e f f f"
+    "g h h h"
+    "i j j j"
+    "k l l l"
+    ". l l l"
+    ". l l l"
+    ". l l l"
+    "m m m m";
+}
+
+.add-reh__title-label {
+  grid-area: a;
+  background-color: $Sombl-Orange-Mid;
+
+  font-size: 2rem;
+  color: $Sombl-Black;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.add-reh__title-input {
+  grid-area: b;
+  background-color: $Sombl-White;
+
+  font-size: 2rem;
+  color: $Sombl-Black;
+  border-radius: 1rem;
+  border: 0.2rem solid $Sombl-Orange-Dark;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.add-reh__start-label {
+  grid-area: c;
+  background-color: $Sombl-Orange-Mid;
+  font-size: 2rem;
+  color: $Sombl-Black;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.add-reh__start-input {
+  grid-area: d;
+  background-color: $Sombl-White;
+  font-size: 2rem;
+  color: $Sombl-Black;
+  border-radius: 1rem;
+  border: 0.2rem solid $Sombl-Orange-Dark;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.add-reh__end-label {
+  grid-area: e;
+  background-color: $Sombl-Orange-Mid;
+  font-size: 2rem;
+  color: $Sombl-Black;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.add-reh__end-input {
+  grid-area: f;
+  background-color: $Sombl-White;
+  font-size: 2rem;
+  color: $Sombl-Black;
+  border-radius: 1rem;
+  border: 0.2rem solid $Sombl-Orange-Dark;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.add-reh__street-label {
+  grid-area: g;
+  background-color: $Sombl-Orange-Mid;
+  font-size: 2rem;
+  color: $Sombl-Black;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.add-reh__street-input {
+  grid-area: h;
+  background-color: $Sombl-White;
+  font-size: 2rem;
+  color: $Sombl-Black;
+  border-radius: 1rem;
+  border: 0.2rem solid $Sombl-Orange-Dark;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.add-reh__postcode-label {
+  grid-area: i;
+  background-color: $Sombl-Orange-Mid;
+  font-size: 2rem;
+  color: $Sombl-Black;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.add-reh__postcode-input {
+  grid-area: j;
+  background-color: $Sombl-White;
+  font-size: 2rem;
+  color: $Sombl-Black;
+  border-radius: 1rem;
+  border: 0.2rem solid $Sombl-Orange-Dark;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.add-reh__notes-label {
+  grid-area: k;
+  background-color: $Sombl-Orange-Mid;
+  font-size: 2rem;
+  color: $Sombl-Black;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.add-reh__notes-input {
+  grid-area: l;
+  resize: none;
+  background-color: $Sombl-White;
+  font-size: 2rem;
+  color: $Sombl-Black;
+  border-radius: 1rem;
+  border: 0.2rem solid $Sombl-Orange-Dark;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.buttons-container {
+  grid-area: m;
+  display: flex;
+  background-color: $Sombl-Orange-Mid;
+  justify-content: flex-end;
+}
+
+.cancel {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  color: $Sombl-White;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+  width: fit-content;
+
+  &:hover {
+    color: $Sombl-Orange-Dark;
+    background-color: $Sombl-Black;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.submit {
+  background-color: $Sombl-Black;
+  text-decoration: none;
+  color: $Sombl-White;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.1s ease-in-out;
+  width: fit-content;
+  margin-left: 1rem;
+
+  &:hover {
+    color: $Sombl-Orange-Dark;
+    background-color: $Sombl-Black;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
+  }
+}

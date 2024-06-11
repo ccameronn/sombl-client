@@ -23,7 +23,8 @@ function Landing() {
   const [groupDetails, setGroupDetails] = useState([]);
   // SETTING GROUPID ON SESSION STORAGE
   sessionStorage.setItem("groupId", GROUP_ID);
-  // will need to fetch this info from database after login sequence
+  sessionStorage.setItem("user", "Cameron");
+  // hardcoded for now - will need to fetch this info from database after login sequence
 
   useEffect(() => {
     const loadGroupDetails = async () => {
