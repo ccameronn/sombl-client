@@ -1,10 +1,6 @@
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import React from "react";
 import "./Rehearsals.scss";
-// import axios from "axios";
-
-import { BACKEND_URL, GROUP_ID } from "../../constants/constants.js";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -86,7 +82,7 @@ function Home() {
           {Array.from({ length: 12 }, (_, i) => (
             <button
               key={i + 1}
-              className={activeMonth == i + 1 ? "month month-active" : "month"}
+              className={activeMonth === i + 1 ? "month month-active" : "month"}
               onClick={() => setActiveMonth(i + 1)}
             >
               {new Date(0, i).toLocaleString("default", { month: "long" })}

@@ -1,8 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import React from "react";
 import "./AddRehearsal.scss";
-import axios from "axios";
 
 import Header from "../../components/Header/Header.js";
 import Footer from "../../components/Footer/Footer.js";

@@ -48,7 +48,7 @@ function formatDate(dateString) {
   const dayOfWeek = days[date.getDay()];
   const day = date.getDate();
   const month = months[date.getMonth()];
-  const year = date.getFullYear();
+  // const year = date.getFullYear();
 
   // Define function to get the ordinal suffix for a given day
   const getOrdinalSuffix = (day) => {
